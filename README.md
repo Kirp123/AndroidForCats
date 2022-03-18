@@ -1,5 +1,4 @@
 # AndroidForCats
-Tinder for cats
 
 The app is aiming to provide an interesting platform for people looking to breed their cats, similar to the famous dating app. 
 In this way, people can find a quick match for their pets without having to go through a difficult process and see the way the pet looks from the first moment.
