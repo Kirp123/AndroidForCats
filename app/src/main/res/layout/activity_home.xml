@@ -16,9 +16,9 @@
         app:tabBackground="@drawable/tab_select_bg"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <androidx.viewpager.widget.ViewPager
+    <com.example.cats.CustomViewPager
         android:id="@+id/homeview_pager"
-        android:layout_width="413dp"
+        android:layout_width="match_parent"
         android:layout_height="620dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="2dp"

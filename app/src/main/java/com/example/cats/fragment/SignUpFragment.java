@@ -1,5 +1,6 @@
 package com.example.cats.fragment;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -10,7 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.cats.HomeActivity;
@@ -21,6 +24,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,8 +34,11 @@ public class SignUpFragment extends Fragment {
     private EditText mEmail;
     private EditText mPassword;
     private EditText mName;
+    private EditText mDob;
+    private EditText mloc;
     private Button mSignUpBtn;
     private FirebaseFirestore mStore;
+
 
 
     @Override
@@ -44,11 +51,15 @@ public class SignUpFragment extends Fragment {
         mEmail = view.findViewById(R.id.signup_email);
         mPassword = view.findViewById(R.id.signup_password);
         mSignUpBtn = view.findViewById(R.id.signup_button);
+        mloc = view.findViewById(R.id.location_txt);
+        mDob = view.findViewById(R.id.date_pick);
         mStore = FirebaseFirestore.getInstance();
+
 
         mSignUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                String email = mEmail.getText().toString();
                String password = mPassword.getText().toString();
                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -57,6 +68,8 @@ public class SignUpFragment extends Fragment {
                        if(task.isSuccessful()){
                            Map<String, Object> map = new HashMap<>();
                            map.put("name", mName.getText().toString());
+                           map.put("age", mDob.getText().toString());
+                           map.put("location", mloc.getText().toString());
 
                            mStore.collection("Users").document(mAuth.getCurrentUser().getUid())
                                    .set(map).addOnCompleteListener(new OnCompleteListener<Void>() {

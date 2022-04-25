@@ -3,19 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.24444444444444444" />
         <entry key="app/src/main/res/drawable/layout_bg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/signup_bg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/tab_select_bg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/white_bg_rad.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/white_bg_with_rad.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.28195368517441255" />
+        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.21522674560546878" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.2537139892578125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24399566650390628" />
         <entry key="app/src/main/res/layout/activity_spash_screen.xml" value="0.13518518518518519" />
-        <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/card_view.xml" value="0.5200027465820313" />
+        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.19300911854103345" />
+        <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.22649688720703126" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.1882537841796875" />
+        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.21838226318359372" />
+        <entry key="app/src/main/res/layout/match_user.xml" value="0.4139457030136897" />
         <entry key="app/src/main/res/layout/single_chip_item.xml" value="0.2630966186523438" />
+        <entry key="app/src/main/res/layout/swipe_in.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/swipe_out.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/tinder_card_view.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/tinder_swipe_in_msg_view.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/tinder_swipe_out_msg_view.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/w.xml" value="0.1" />
       </map>
     </option>
   </component>
