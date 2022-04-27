@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="3dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="10">
@@ -21,8 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="9"
-            android:textColor="@android:color/black"
-            android:hint="Type message.." />
+            android:hint="Type message"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <ImageView
             android:id="@+id/msg_send"
@@ -31,10 +31,14 @@
             android:layout_weight="0.6"
             android:src="@drawable/ic_baseline_send_24" />
 
+
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chat_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/chat_lt" />
+
+
 </RelativeLayout>
