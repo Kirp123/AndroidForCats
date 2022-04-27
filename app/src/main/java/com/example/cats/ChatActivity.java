@@ -23,9 +23,11 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,7 +59,7 @@ public class ChatActivity extends AppCompatActivity {
         mChatAdapter = new ChatAdapter(this,mChatList);
         mChatRecycler.setAdapter(mChatAdapter);
 
-        mStore.collection("Message").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        mStore.collection("Message").orderBy("time_stamp", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException error) {
                 for(DocumentChange doc: queryDocumentSnapshots.getDocumentChanges()){
@@ -86,6 +88,7 @@ public class ChatActivity extends AppCompatActivity {
                     map.put("message", mChatText.getText().toString());
                     map.put("from", mAuth.getCurrentUser().getUid());
                     map.put("to", toID);
+                    map.put("time_stamp", new Date());
 
                     mStore.collection("Message").add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
                         @Override

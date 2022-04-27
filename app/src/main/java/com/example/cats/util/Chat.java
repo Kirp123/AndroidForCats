@@ -1,16 +1,28 @@
 package com.example.cats.util;
 
+import com.google.firebase.Timestamp;
+
 public class Chat {
 
     String from;
     String to;
     String message;
+    Timestamp time_stamp;
+
 
     public Chat() {
     }
 
     public String getFrom() {
         return from;
+    }
+
+    public Timestamp getTime_stamp() {
+        return time_stamp;
+    }
+
+    public void setTime_stamp(Timestamp time_stamp) {
+        this.time_stamp = time_stamp;
     }
 
     public void setFrom(String from) {
