@@ -1,4 +1,4 @@
-package com.example.cats.fragment;
+package com.example.cats.views;
 
 import android.os.Bundle;
 

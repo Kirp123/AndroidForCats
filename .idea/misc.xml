@@ -4,6 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.24444444444444444" />
+        <entry key="..\:/AndroidStudioProjects/AndroidForCats/app/src/main/res/layout/activity_chat.xml" value="0.5541666666666667" />
+        <entry key="..\:/AndroidStudioProjects/AndroidForCats/app/src/main/res/layout/activity_home.xml" value="0.5541666666666667" />
+        <entry key="..\:/AndroidStudioProjects/AndroidForCats/app/src/main/res/layout/activity_main.xml" value="0.5401041666666667" />
+        <entry key="..\:/AndroidStudioProjects/AndroidForCats/app/src/main/res/layout/activity_spash_screen.xml" value="0.5541666666666667" />
+        <entry key="..\:/AndroidStudioProjects/AndroidForCats/app/src/main/res/layout/fragment_discover.xml" value="0.5541666666666667" />
+        <entry key="..\:/AndroidStudioProjects/AndroidForCats/app/src/main/res/layout/fragment_profile.xml" value="0.5541666666666667" />
+        <entry key="..\:/AndroidStudioProjects/AndroidForCats/app/src/main/res/layout/fragment_sign_in.xml" value="0.5541666666666667" />
+        <entry key="..\:/AndroidStudioProjects/AndroidForCats/app/src/main/res/layout/fragment_sign_in_sign_up.xml" value="0.5401041666666667" />
+        <entry key="..\:/AndroidStudioProjects/AndroidForCats/app/src/main/res/layout/fragment_sign_up.xml" value="0.5541666666666667" />
+        <entry key="..\:/AndroidStudioProjects/AndroidForCats/app/src/main/res/layout/fragment_signinsignup.xml" value="0.5541666666666667" />
         <entry key="app/src/main/res/drawable/layout_bg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/receiver_bg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/sender_bg.xml" value="0.1" />
