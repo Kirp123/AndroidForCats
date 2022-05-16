@@ -3,19 +3,13 @@ package com.example.cats;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import com.example.cats.adapter.HomeViewPagerAdapter;
-import com.example.cats.fragment.ChatFragment;
-import com.example.cats.fragment.DiscoverFragment;
-import com.example.cats.fragment.ProfileFragment;
-import com.example.cats.fragment.SignInFragment;
-import com.example.cats.fragment.SignUpFragment;
+import com.example.cats.views.ChatFragment;
+import com.example.cats.views.DiscoverFragment;
+import com.example.cats.views.ProfileFragment;
 import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
 

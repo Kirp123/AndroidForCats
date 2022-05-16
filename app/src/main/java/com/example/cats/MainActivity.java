@@ -7,8 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.cats.adapter.ViewPagerAdapter;
-import com.example.cats.fragment.SignInFragment;
-import com.example.cats.fragment.SignUpFragment;
+import com.example.cats.views.SignInFragment;
+import com.example.cats.views.SignUpFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 

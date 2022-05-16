@@ -1,32 +1,26 @@
-package com.example.cats.fragment;
+package com.example.cats.views;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.cats.HomeActivity;
 import com.example.cats.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import com.example.cats.viewmodel.SignUpViewModel;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 
 public class SignUpFragment extends Fragment {
 
@@ -38,8 +32,28 @@ public class SignUpFragment extends Fragment {
     private EditText mloc;
     private Button mSignUpBtn;
     private FirebaseFirestore mStore;
+    private SignUpViewModel signUpViewModel;
 
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        signUpViewModel = new ViewModelProvider(this).get(SignUpViewModel.class);
+        signUpViewModel.getUserMutableLiveData().observe(this, new Observer<FirebaseUser>() {
+            @Override
+            public void onChanged(FirebaseUser firebaseUser) {
+                if(firebaseUser !=null){
+                    Toast.makeText(getContext(), "User Registered", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), HomeActivity.class);
+                    intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    getActivity().finish();
+
+
+                }
+            }
+        });
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,11 +70,18 @@ public class SignUpFragment extends Fragment {
         mStore = FirebaseFirestore.getInstance();
 
 
+
+
         mSignUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String email = mEmail.getText().toString();
+                String password = mPassword.getText().toString();
 
-               String email = mEmail.getText().toString();
+                    signUpViewModel.register(email, password);
+
+
+               /*String email = mEmail.getText().toString();
                String password = mPassword.getText().toString();
                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                    @Override
@@ -90,7 +111,7 @@ public class SignUpFragment extends Fragment {
                            Toast.makeText(getContext(), "Fail" +task.getException().getMessage(),Toast.LENGTH_SHORT);
                        }
                    }
-               });
+               });*/
             }
         });
 

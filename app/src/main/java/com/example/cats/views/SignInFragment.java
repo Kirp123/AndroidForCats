@@ -1,11 +1,13 @@
-package com.example.cats.fragment;
+package com.example.cats.views;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,11 +18,9 @@ import android.widget.Toast;
 
 import com.example.cats.HomeActivity;
 import com.example.cats.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import com.example.cats.viewmodel.SignInViewModel;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SignInFragment extends Fragment {
 
@@ -28,11 +28,31 @@ public class SignInFragment extends Fragment {
     private EditText mPassword;
     private Button mLoginBtn;
     private FirebaseAuth mAuth;
+    private SignInViewModel signInViewModel;
 
     private ProgressDialog mDialog;
 
     public SignInFragment() {
 
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        signInViewModel = new ViewModelProvider(this).get(SignInViewModel.class);
+        signInViewModel.getUserMutableLiveData().observe(this, new Observer<FirebaseUser>() {
+            @Override
+            public void onChanged(FirebaseUser firebaseUser) {
+                if(firebaseUser !=null){
+                    mDialog.show();
+                    Toast.makeText(getContext(),"Success", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), HomeActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    getActivity().finish();
+                }
+            }
+        });
     }
 
     @Override
@@ -45,15 +65,20 @@ public class SignInFragment extends Fragment {
         mLoginBtn = view.findViewById(R.id.login_button);
         mAuth = FirebaseAuth.getInstance();
         mDialog = new ProgressDialog(getContext());
-        mDialog.setTitle("Testing if u is real");
-        mDialog.setTitle("Take a seat");
+
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = mEmail.getText().toString();
                 String password = mPassword.getText().toString();
-                if(!email.isEmpty() && !password.isEmpty()){
+
+                    signInViewModel.login(email, password);
+
+
+
+
+                /*if(!email.isEmpty() && !password.isEmpty()){
 
                     mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -79,9 +104,10 @@ public class SignInFragment extends Fragment {
                         }
                     });
 
-                }
+                }*/
             }
         });
+
         return view;
     }
 }

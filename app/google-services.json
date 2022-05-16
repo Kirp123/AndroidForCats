@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "309647103303",
-    "project_id": "cats-b3155",
-    "storage_bucket": "cats-b3155.appspot.com"
+    "project_number": "335362970536",
+    "project_id": "androidforcats",
+    "storage_bucket": "androidforcats.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:309647103303:android:bef4e46b19dafcc13c2862",
+        "mobilesdk_app_id": "1:335362970536:android:21b94bb076553be53c439d",
         "android_client_info": {
           "package_name": "com.example.cats"
         }
       },
       "oauth_client": [
         {
-          "client_id": "309647103303-lbkuoog8ap7j2f25459q45u9bpph4u85.apps.googleusercontent.com",
+          "client_id": "335362970536-9lc390tgmnmiflc18clpvdl5olf1d51e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cats",
+            "certificate_hash": "6f1acb8e84ea2daf643bbafa8158f33d81984d05"
+          }
+        },
+        {
+          "client_id": "335362970536-2350qha954m98q90aj3ih0tslkmghg22.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCbO4YwAsFAUE79Dh6XlPsYB4_kZGXy0_g"
+          "current_key": "AIzaSyABjF3QNrMJNkH8xVUqqKhn9TJX2-YqfjU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "309647103303-lbkuoog8ap7j2f25459q45u9bpph4u85.apps.googleusercontent.com",
+              "client_id": "335362970536-2350qha954m98q90aj3ih0tslkmghg22.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
