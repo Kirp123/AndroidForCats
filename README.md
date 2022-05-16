@@ -15,3 +15,4 @@ The user should be able to chat with the other user that liked back their pet.
 
 The user should be able to use the camera in the app to take a picture and send it to the chat.
 
+LINK TO DEMO VIDEO - https://www.youtube.com/watch?v=O72NsAVk5T8&feature=youtu.be
